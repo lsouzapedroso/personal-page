@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { emailjs } from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 
 interface EmailData {
     email: string;
@@ -17,7 +17,6 @@ export async function POST(req: Request) {
             { email, subject, message },
             {
                 publicKey: process.env.EMAILJS_PUBLIC_KEY!,
-                privateKey: process.env.EMAILJS_PRIVATE_KEY!,
             }
         );
 

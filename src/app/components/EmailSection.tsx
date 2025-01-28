@@ -20,7 +20,7 @@ const EmailSection: React.FC = () => {
     try {
       await sendEmail(data);
       setEmailSubmitted(true);
-    } catch (error) {
+    } catch {
       alert("Something went wrong, please try again.");
     } finally {
       setIsSubmitting(false);
