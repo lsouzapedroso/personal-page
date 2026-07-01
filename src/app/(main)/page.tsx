@@ -4,8 +4,6 @@ import { AnimatePresence } from "framer-motion";
 import HeroSection from "@/versions/v2/components/HeroSection";
 import AboutSection from "@/versions/v2/components/AboutSection";
 import IntroLoader from "@/versions/v2/components/IntroLoader";
-import Navbar from "@/versions/v2/components/Navbar";
-import Footer from "@/versions/v2/components/Footer";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -19,13 +17,11 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      <main className="w-full min-h-screen bg-[#12060F] overflow-x-hidden flex flex-col justify-between">
-        <Navbar loading={loading} />
-        <div className="flex-grow">
-          <HeroSection loading={loading} />
-          <AboutSection />
-        </div>
-        <Footer />
+      <main 
+        className="w-full h-screen bg-[#12060F] no-scrollbar overflow-x-hidden overflow-y-auto snap-y snap-mandatory scroll-smooth"
+      >
+        <HeroSection loading={loading} />
+        <AboutSection />
       </main>
     </>
   );

@@ -14,6 +14,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        neutral: ["var(--font-neutral-face)", "sans-serif"],
+      },
     },
     colors: {
       ...colors,
