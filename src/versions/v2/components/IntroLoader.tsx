@@ -127,7 +127,7 @@ const IntroLoader: React.FC<IntroLoaderProps> = ({ onComplete }) => {
         }}
         className="absolute bottom-12 text-[#DEF7D1]/40 text-xs tracking-widest font-mono uppercase z-10"
       >
-        LUIZ CARLOS • PORTFOLIO V2
+        LSOUZAPEDROSO.DEV • PORTFOLIO
       </motion.div>
     </motion.div>
   );
