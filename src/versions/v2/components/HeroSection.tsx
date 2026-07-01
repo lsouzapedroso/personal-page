@@ -73,30 +73,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ loading }) => {
           variants={containerVariants}
           initial="hidden"
           animate={loading ? "hidden" : (isInView ? "show" : "hidden")}
-          className="flex flex-col justify-between flex-grow z-10 relative"
+          className="flex flex-col justify-center flex-grow z-10 relative"
         >
-          {/* Top Header - Info */}
-          <motion.div 
-            className="flex justify-between items-start w-full relative"
-          >
-            <motion.h2 
-              variants={itemVariants}
-              className="font-neutral font-bold text-2xl md:text-3xl tracking-tighter"
-            >
-              LUIZ CARLOS.
-            </motion.h2>
-            
-            <motion.div 
-              variants={itemVariants}
-              className="font-neutral text-right font-bold text-xs md:text-sm tracking-tighter leading-none flex flex-col uppercase"
-            >
-              <span>Backend</span>
-              <span>Software</span>
-              <span>Engineer</span>
-            </motion.div>
-          </motion.div>
-
-          {/* Center Logo & Superimposed Description */}
+          {/* Center Logo & Superimposed Elements */}
           <div className="relative w-full max-w-[620px] mx-auto flex-grow flex flex-col justify-center my-8 lg:my-0">
             {/* Giant Logo */}
             <motion.div
@@ -104,9 +83,36 @@ const HeroSection: React.FC<HeroSectionProps> = ({ loading }) => {
             >
               <Logo fillColor="#FF3B00" className="w-full h-auto" />
             </motion.div>
-            
+
+            {/* Superimposed Header - Top Left: LUIZ CARLOS. */}
+            <div className="absolute top-[26%] sm:top-[29%] left-[-7%] sm:left-[-6%] lg:left-[-10%] pointer-events-none">
+              <motion.h2 
+              variants={itemVariants}
+              className="font-neutral text-[3vw] sm:text-[2vw] lg:text-[1.1vw] tracking-tighter uppercase text-[#12060F]"
+            >
+              LUIZ CARLOS.
+            </motion.h2>
+          </div>
+
+            {/* Superimposed Header - Top Right: SOFTWARE ENGINEER */}
+            <div className="absolute top-[33%] right-[-7%] pointer-events-none">
+              <motion.div 
+                variants={itemVariants}
+                className="font-neutral text-[2vw] sm:text-[1.4vw] lg:text-[0.7vw] tracking-tighter leading-[1] flex flex-col uppercase text-[#12060F]"
+              >
+                <span className="text-left">SOFTWARE</span>
+                
+                {/* O ajuste fino do alinhamento acontece neste padding (pl) */}
+                <div className="flex flex-col text-left pl-[5.5em] sm:pl-[5em]">
+                  <span>ENGINEER</span>
+                </div>
+              </motion.div>
+            </div>
+
+
+
             {/* Superimposed Description Text */}
-            <div className="absolute bottom-[25%] left-[5%] right-[5%] pointer-events-none">
+            <div className="absolute bottom-[27%] left-[5%] right-[5%] pointer-events-none">
               <motion.p
                 initial={{ opacity: 0, y: 40 }}
                 animate={loading ? { opacity: 0, y: 40 } : { opacity: 1, y: 0 }}
