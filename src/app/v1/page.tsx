@@ -1,10 +1,10 @@
-import HeroSection from "./components/HeroSection";
-import Navbar from "./components/Navbar";
-import AboutSection from "./components/AboutSection";
-import EmailSection from "./components/EmailSection";
-import Footer from "./components/Footer";
+import HeroSection from "@/versions/v1/components/HeroSection";
+import Navbar from "@/versions/v1/components/Navbar";
+import AboutSection from "@/versions/v1/components/AboutSection";
+import EmailSection from "@/versions/v1/components/EmailSection";
+import Footer from "@/versions/v1/components/Footer";
 
-export default function Home() {
+export default function HomeV1() {
     return (
         <main className="flex min-h-screen flex-col bg-[#121212]">
             <Navbar />

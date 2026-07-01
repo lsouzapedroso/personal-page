@@ -1,11 +1,17 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 const HeroSection = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -20,21 +26,25 @@ const HeroSection = () => {
               Hello, I&apos;m{" "}
             </span>
             <br></br>
-            <TypeAnimation
-              sequence={[
-                "Luiz Carlos",
-                1000,
-                "Web Developer",
-                1000,
-                " Software Engineer",
-                1000,
-                "Backend Engineer",
-                1000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
+            {mounted ? (
+              <TypeAnimation
+                sequence={[
+                  "Luiz Carlos",
+                  1000,
+                  "Web Developer",
+                  1000,
+                  " Software Engineer",
+                  1000,
+                  "Backend Engineer",
+                  1000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
+            ) : (
+              <span>Luiz Carlos</span>
+            )}
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
               A Software Developer dedicated to creating impactful, efficient, and scalable software
