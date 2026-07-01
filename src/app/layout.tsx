@@ -1,22 +1,40 @@
-import "./globals.css";
-import { Inter } from "next/font/google";
-import React, { ReactNode } from "react";
+import './globals.css';
+import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
+
+const neutralFace = localFont({
+  src: [
+    {
+      path: './fonts/NeutralFace.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/NeutralFace-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-neutral-face',
+});
 
 export const metadata = {
-    title: "Luiz's Portfolio",
-    description: "Portfolio",
+    title: 'My Personal Page - V2',
+    description: 'The new and improved personal page',
 };
 
-interface RootLayoutProps {
-    children: ReactNode;
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({
+                                       children,
+                                   }: {
+    children: React.ReactNode;
+}) {
     return (
-        <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <html lang="en" suppressHydrationWarning>
+        <body className={`${inter.className} ${neutralFace.variable} antialiased`}>
+            {children}
+        </body>
         </html>
     );
 }
