@@ -126,6 +126,27 @@ const AboutSection = () => {
                 ))}
               </div>
             </div>
+
+            {/* Social Links */}
+            <div className="mt-8 pt-6 border-t border-[#441925]/30 flex gap-4">
+              <a 
+                href="https://github.com/lsouzapedroso" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-neutral text-xs font-bold uppercase tracking-wider text-[#ff3b00] hover:text-white transition-all duration-200"
+              >
+                GitHub
+              </a>
+              <span className="text-[#DEF7D1]/30">•</span>
+              <a 
+                href="https://www.linkedin.com/in/lsouzapedroso/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-neutral text-xs font-bold uppercase tracking-wider text-[#ff3b00] hover:text-white transition-all duration-200"
+              >
+                LinkedIn
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
