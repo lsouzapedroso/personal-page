@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, FormEvent } from "react";
-import { sendEmail } from "../services/emailService";
+import { sendEmail } from "@/app/v1/services/emailService";
 
 const EmailSection: React.FC = () => {
   const [emailSubmitted, setEmailSubmitted] = useState<boolean>(false);
